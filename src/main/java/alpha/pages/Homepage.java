@@ -54,20 +54,21 @@ public class Homepage extends Browser {
         return msg;
 
     }
-    public void signout(){
+
+    public void signout() {
         List<WebElement> signout = driver.findElements(By.cssSelector(".primary-nav__item-text"));
-        for(WebElement sign : signout){
-            if(sign.getText().equalsIgnoreCase("Sign out")){
+        for (WebElement sign : signout) {
+            if (sign.getText().equalsIgnoreCase("Sign out")) {
                 sign.click();
                 break;
             }
         }
     }
 
-            public int randomnumber(){
-                Random random = new Random();
-                return random.nextInt();
+    public int randomnumber() {
+        Random random = new Random();
+        return random.nextInt();
 
-            }
+    }
 
 }

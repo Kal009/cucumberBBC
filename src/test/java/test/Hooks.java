@@ -16,7 +16,7 @@ public class Hooks  {
         bro.browseropen();
         bro.maximise();
         bro.navigate("https://www.bbc.co.uk");
-        bro.waits(60);
+        bro.waits(0);
 
     }
 
@@ -24,5 +24,4 @@ public class Hooks  {
     public void teardown (){
         bro.quit();
     }
-
 }

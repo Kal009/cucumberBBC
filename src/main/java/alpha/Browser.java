@@ -1,22 +1,15 @@
 package alpha;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
-import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
-import org.openqa.selenium.Platform;
+
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
-
-
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class Browser {
@@ -35,7 +28,6 @@ public class Browser {
     }
 
     public void browseropen() throws MalformedURLException {
-
 
       /*  switch (browser) {
             case "chrome":
@@ -57,38 +49,27 @@ public class Browser {
 
         switch (browser) {
             case "chrome":
-                ChromeDriverManager.getInstance().setup();
+                System.setProperty("webdriver.chrome.driver","src/main/resources/WebDriver/chromedriver2.exe");
                 driver = new ChromeDriver();
                 break;
             case "ie":
-                InternetExplorerDriverManager.getInstance().setup();
+             //   InternetExplorerDriverManager.getInstance().setup();
                 driver = new InternetExplorerDriver();
                 break;
             default:
-                FirefoxDriverManager.getInstance().setup();
+            //    FirefoxDriverManager.getInstance().setup();
                 driver = new FirefoxDriver();
                 break;
         }
-
     }
-
     public void waits(int sec) {
         driver.manage().timeouts().implicitlyWait(sec, TimeUnit.SECONDS);
     }
-
     public void maximise() {
         driver.manage().window().maximize();
     }
-
-
     public void quit() {
         driver.quit();
     }
-
-    public void navigate(String url) {
-
-        driver.get(url);
-
-    }
-
+    public void navigate(String url) { driver.get(url); }
 }
