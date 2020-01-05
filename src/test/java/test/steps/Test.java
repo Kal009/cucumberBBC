@@ -126,6 +126,7 @@ public class Test extends Browser {
         hp.emailupdate();
         driver.findElement(By.cssSelector("#submit-button")).click();
         driver.findElement(By.cssSelector("#idcta-username")).click();
+        Thread.sleep(2000);
         String ms1 = driver.findElement(By.cssSelector(".heading.heading--hero.u-padding-bottom-double")).getText();
         Assert.assertEquals(ms1, "Lovely to see you here");
         hp.signout();
